@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column align-items-center justify-content-center vh-100 bg-dark">
+
+    <!-- Kayan Yazı -->
+    <div class="container text-center mb-4 text-white">
+        <h1 class="display-4">
+            <marquee behavior="scroll" direction="left">Kaan Latinler Web Developer</marquee>
+        </h1>
+    </div>
+
+    <!-- Sosyal Medya Butonları -->
+    <div class="container text-center">
+        <a href="https://instagram.com/kaanlatinler" target="_blank" class="btn btn-outline-primary mx-2">Instagram</a>
+        <a href="https://www.linkedin.com/in/kaan-latinler-0a2615271/" target="_blank"
+            class="btn btn-outline-info mx-2">LinkedIn</a>
+        <a href="https://github.com/kaanlatinler" target="_blank" class="btn btn-outline-light mx-2">GitHub</a>
+    </div>
+
+    <script>
+        setInterval(() => {
+            fetch('https://www.kaanlatinler.online/api/steps/getSteps')
+                .then(response => response.json())
+                .then(data => {
+                    console.log("data");
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                });
+        }, 600000); // 10 dakika = 600.000 ms
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
