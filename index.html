@@ -27,6 +27,14 @@
     </div>
 
     <script>
+        fetch('https://prekastev-api.onrender.com/api/steps/getSteps')
+            .then(response => response.json())
+            .then(data => {
+                console.log("data => ", data);
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
         setInterval(() => {
             fetch('https://prekastev-api.onrender.com/api/steps/getSteps')
                 .then(response => response.json())
